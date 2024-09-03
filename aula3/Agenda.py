@@ -20,7 +20,7 @@ class Agenda:
             return True
         return False  # Retorna False se o contato não for encontrado
 
-     def listar_contatos(self):
+    def listar_contatos(self):
         if not self.__contatos:
             print("Agenda vazia.")
         else:

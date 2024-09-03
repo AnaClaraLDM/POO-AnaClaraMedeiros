@@ -12,7 +12,7 @@ def criar_contato():
     data_nasc = Data(dia, mes, ano)
     return Contato(nome, telefone, data_nasc)
 
-    def exibir_menu():
+def exibir_menu():
     print("\nMenu:")
     print("1. Inserir contato")
     print("2. Buscar contato")

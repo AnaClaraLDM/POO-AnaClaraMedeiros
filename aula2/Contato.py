@@ -1,4 +1,4 @@
-from data import Data
+from Data import Data
 
 class Contato:
     def __init__(self, nome, telefone, data_nascimento):
@@ -6,7 +6,7 @@ class Contato:
         self.__telefone = telefone
         self.__data_nascimento = data_nascimento
 
-		def get_nome(self):
+    def get_nome(self):
         return self.__nome
     
     def get_telefone(self):
