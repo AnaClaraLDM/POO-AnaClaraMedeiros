@@ -33,8 +33,7 @@ while opcao!= 5:
     elif opcao == 3:
         titulo = input("\nQual o título do livro que você deseja achar? ")
         livro  = biblioteca.buscarLivro(titulo)
-        if livro livros = []:
-        livro.exibirLivro()
+
     
     elif opcao == 4:
         biblioteca.listarLivros()
