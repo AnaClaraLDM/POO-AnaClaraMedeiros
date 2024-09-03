@@ -20,9 +20,13 @@ class Livro:
         return self.__anoPublicacao
     
     def setNome(self,anoPublicacao):
+<<<<<<< HEAD
         self.__anoPublicacao = anoPublicacao
     
     def exibirLivro(self):
         print(f"Título: {self.__titulo}")
         print(f"Ano de publicação: {self.__anoPublicacao}")
         self.__autor.exibirAutor()
+=======
+        self.__anoPublicacao = anoPublicacao
+>>>>>>> origin/main

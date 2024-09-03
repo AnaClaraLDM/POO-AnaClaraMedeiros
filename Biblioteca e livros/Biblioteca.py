@@ -7,11 +7,18 @@ class Biblioteca:
         self.__livros.append(livros)  
 
     def buscarLivro(self, nome):
+<<<<<<< HEAD
         for livro in self.__livros:
             if livro.getNome().lower() == nome.lower():
                 return livro 
             else:
                 return("Livro não encontrado")
+=======
+        for livros in self.__livros:
+            if livros.getNome().lower() == nome.lower():
+                return livros  
+        return None 
+>>>>>>> origin/main
 
     def removerLivro(self, nome):
         livro = self.buscarLivro(nome)
@@ -25,6 +32,10 @@ class Biblioteca:
             print("Este livro não existe nessa biblioteca")
         else:
             for livros in self.__livros:
+<<<<<<< HEAD
                 livros.exibirLivro()
 
     
+=======
+                livros.exibirLivro()
+>>>>>>> origin/main
