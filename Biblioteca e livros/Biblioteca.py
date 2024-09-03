@@ -10,7 +10,8 @@ class Biblioteca:
         for livro in self.__livros:
             if livro.getNome().lower() == nome.lower():
                 return livro 
-        return None 
+            else:
+                return("Livro não encontrado")
 
     def removerLivro(self, nome):
         livro = self.buscarLivro(nome)
