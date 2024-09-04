@@ -1,28 +1,23 @@
 class Produto:
+    def __init__(self, nome, preco, quantidade):
+        self.nome = nome
+        self.preco = preco
+        self.quantidade = quantidade
 
-    def __init__(self,nome,preco,quantidade):
-        self.__nome = nome
-        self.__preco = preco
-        self.__quantidade = quantidade
-    
-    def getNome(self):
-        return self.__nome
-    
-    def setNome(self,nome):
-        self.__nome = nome
+    def get_nome(self):
+        return self.nome
 
-    def getPreco(self):
-        return self.__idade
-    
-    def setPreco(self,preco):
-        if preco > 0:
-            self.__preco = preco
-        else:
-            print(preco," é um valor inválido")
+    def get_preco(self):
+        return self.preco
 
-    def getQuantidade(self):
-        return self.__quantidade
-    
-    def setQuantidade(self,quantidade):
-        if quantidade >= 0 and quantidade.is_integer():
-            self.__quantidade = quantidade
+    def get_quantidade(self):
+        return self.quantidade
+
+    def set_nome(self, nome):
+        self.nome = nome
+
+    def set_preco(self, preco):
+        self.preco = preco
+
+    def set_quantidade(self, quantidade):
+        self.quantidade = quantidade

@@ -2,53 +2,48 @@ from Biblioteca import Biblioteca
 from Livro import Livro
 from Autor import Autor
 
-opcao = 0
-
 biblioteca = Biblioteca()
+opcao = "0"
 
-while opcao!= 5:
-    print("-----------Menu da Biblioteca-----------")
-    print("1) Adicionar um novo livro  à biblioteca")
-    print("2) Remover um livro")
-    print("3) Buscar um livro")
-    print("4) Listar todos os livros disponíveis")
-    print("5) Sair da biblioteca")
+while opcao != "5":
+    print("\nMenu:")
+    print("1. Adicionar Livro")
+    print("2. Remover Livro")
+    print("3. Buscar Livro")
+    print("4. Listar Livros")
+    print("5. Sair")
+    
+    opcao = input("Escolha uma opção: ")
 
-    opcao = int(input("Digite a sua opção: "))
+    if opcao == "1":
+        titulo = input("Título do Livro: ")
+        nome_autor = input("Nome do Autor: ")
+        nacionalidade = input("Nacionalidade do Autor: ")
+        data_nascimento = input("Data de Nascimento do Autor: ")
+        
+        ano_publicacao = input("Ano de Publicação: ")
+        while not ano_publicacao.isdigit():
+            print("Ano de Publicação inválido. Por favor, insira um número inteiro.")
+            ano_publicacao = input("Ano de Publicação: ")
+        ano_publicacao = int(ano_publicacao)
 
-    if opcao == 1:
-        nome = input("\nQual o nome do autor do livro: ")
-        nacionalidade = input("\nQual a nacinalidade do autor do livro: ")
-        dataNascimento = input("\nQual a data de nascimento do autor do livro: ")
-        titulo = input("\nQual o título do livro: ")
-        anoPublicacao = input("\nQual o ano de publicação do livro: ")
-        autor = Autor(nome,nacionalidade,dataNascimento)
-        livro = Livro(titulo,autor,anoPublicacao)
+        autor = Autor(nome_autor, nacionalidade, data_nascimento)
+        livro = Livro(titulo, autor, ano_publicacao)
         biblioteca.adicionarLivro(livro)
-    
-    elif opcao == 2:
-        titulo = input("\nQual o título do livro que você deseja excluir? ")
-        biblioteca.removerLivro(titulo)
-    
-    elif opcao == 3:
-        titulo = input("\nQual o título do livro que você deseja achar? ")
-        livro  = biblioteca.buscarLivro(titulo)
 
-    
-    elif opcao == 4:
+    elif opcao == "2":
+        titulo = input("Título do Livro a remover: ")
+        biblioteca.removerLivro(titulo)
+
+    elif opcao == "3":
+        titulo = input("Título do Livro a buscar: ")
+        biblioteca.buscarLivro(titulo)
+
+    elif opcao == "4":
         biblioteca.listarLivros()
-    
-    elif opcao == 5:
-        print("Encerrando o sistema...")
+
+    elif opcao == "5":
+        print("Saindo...")
 
     else:
-        print("Opção inválida. Tente novamente.")
-    
-
-        
-        
-
-
-
-
-
+        print("Opção inválida, tente novamente.")

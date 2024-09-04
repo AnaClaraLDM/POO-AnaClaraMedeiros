@@ -1,32 +1,23 @@
 class Livro:
     def __init__(self, titulo, autor, anoPublicacao):
-        self.__titulo = titulo
-        self.__autor = autor
-        self.__anoPublicacao = anoPublicacao
-    
-    def getNome(self):
-        return self.__titulo
-    
-    def setNome(self,titulo):
-        self.__titulo = titulo
-    
-    def getNome(self):
-        return self.__autor
-    
-    def setNome(self,autor):
-        self.__autor = autor
-    
-    def getNome(self):
-        return self.__anoPublicacao
-    
-    def setNome(self,anoPublicacao):
-<<<<<<< HEAD
-        self.__anoPublicacao = anoPublicacao
-    
-    def exibirLivro(self):
-        print(f"Título: {self.__titulo}")
-        print(f"Ano de publicação: {self.__anoPublicacao}")
-        self.__autor.exibirAutor()
-=======
-        self.__anoPublicacao = anoPublicacao
->>>>>>> origin/main
+        self._titulo = titulo
+        self._autor = autor
+        self._anoPublicacao = anoPublicacao
+
+    def get_titulo(self):
+        return self._titulo
+
+    def set_titulo(self, titulo):
+        self._titulo = titulo
+
+    def get_autor(self):
+        return self._autor
+
+    def set_autor(self, autor):
+        self._autor = autor
+
+    def get_anoPublicacao(self):
+        return self._anoPublicacao
+
+    def set_anoPublicacao(self, anoPublicacao):
+        self._anoPublicacao = anoPublicacao
