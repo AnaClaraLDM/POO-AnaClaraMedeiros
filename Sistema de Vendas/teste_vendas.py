@@ -1,7 +1,8 @@
 from Produto import Produto
 from Venda import Venda
 
-venda = Venda([], "")
+data = input("Digite a data da venda (formato: DD/MM/AAAA): ")
+venda = Venda(data)
 opcao = "0"
 
 while opcao != "4":
@@ -19,7 +20,7 @@ while opcao != "4":
         preco_valido = False
         while not preco_valido:
             preco = input("Preço do Produto: ")
-            preco = preco.replace(',', '.')  # Substitui vírgulas por pontos
+            preco = preco.replace(',', '.')
             pontos = 0
             for caractere in preco:
                 if caractere == '.':
