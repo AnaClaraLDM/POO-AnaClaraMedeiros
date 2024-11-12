@@ -10,7 +10,8 @@ while opcao != "4":
     print("1. Adicionar Produto")
     print("2. Remover Produto")
     print("3. Listar Produtos e Mostrar Total")
-    print("4. Sair")
+    print("4. Salvar em arquivo")
+    print("5. Sair")
     
     opcao = input("Escolha uma opção: ")
 
@@ -61,6 +62,10 @@ while opcao != "4":
         print(f"Total da Venda: R${venda.calcularTotal():.2f}")
 
     elif opcao == "4":
+        arquivo = input("Digite o nome do arquivo: ")
+        venda.salvarEmJson(arquivo)
+
+    elif opcao == "5":
         print("Saindo...")
 
     else:

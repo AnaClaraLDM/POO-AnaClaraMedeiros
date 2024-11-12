@@ -1,3 +1,5 @@
+import json
+from Produto import Produto
 class Venda:
     def __init__(self, dataVenda):
         self.__produtos = []
@@ -38,24 +40,10 @@ class Venda:
             for produto in self.__produtos:
                 print(f"Nome: {produto.get_nome()}, Preço: R${produto.get_preco():.2f}, Quantidade: {produto.get_quantidade()}")
     
-    def salvar_venda_em_json(self, caminho_arquivo='vendas.json'):
-        venda_data = {
-            "dataVenda": self.__dataVenda,
-            "produtos": [{
-                "nome": produto.get_nome(),
-                "preco": produto.get_preco(),
-                "quantidade": produto.get_quantidade()
-            } for produto in self.__produtos],
-            "total": self.get_total()
-        }
+    def salvarEmJson(self, arquivo):
+        objetos_dict = [obj.to_dict() for obj in self.__produtos]
+        dados_em_json = json.dumps(objetos_dict)
+        with open(arquivo, 'w') as arquivo:
+            arquivo.write(dados_em_json)
 
-        try:
-            with open(caminho_arquivo, 'r') as file:
-                vendas = json.load(file)
-        except FileNotFoundError:
-            vendas = []
-
-        vendas.append(venda_data)
-
-        with open(caminho_arquivo, 'w') as file:
-            json.dump(vendas, file, indent=4)
+        
