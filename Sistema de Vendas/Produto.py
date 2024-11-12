@@ -28,3 +28,10 @@ class Produto:
         "preco": self.__preco,
         "quantidade": self.__quantidade
     }
+
+    @classmethod
+    def from_dict(cls, dados):
+        nome = dados['nome']
+        preco = dados['preco']
+        quantidade = dados['quantidade']
+        return cls(nome, preco, quantidade)

@@ -1,3 +1,4 @@
+import json
 from Produto import Produto
 from Venda import Venda
 
@@ -5,13 +6,14 @@ data = input("Digite a data da venda (formato: DD/MM/AAAA): ")
 venda = Venda(data)
 opcao = "0"
 
-while opcao != "4":
+while opcao != "6":
     print("\nMenu:")
     print("1. Adicionar Produto")
     print("2. Remover Produto")
     print("3. Listar Produtos e Mostrar Total")
     print("4. Salvar em arquivo")
-    print("5. Sair")
+    print("5. Incorporar dados json")
+    print("6. Sair")
     
     opcao = input("Escolha uma opção: ")
 
@@ -66,6 +68,10 @@ while opcao != "4":
         venda.salvarEmJson(arquivo)
 
     elif opcao == "5":
+        arquivo = input("Nome do arquivo com os dados dos livros: ")
+        venda.recuperarDeJson(arquivo)      
+
+    elif opcao == "6":
         print("Saindo...")
 
     else:
