@@ -1,4 +1,4 @@
-import json
+from json import *
 from Produto import Produto
 from Venda import Venda
 
