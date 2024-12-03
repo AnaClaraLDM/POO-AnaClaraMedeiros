@@ -1,6 +1,6 @@
-from data import Data
-from contato import Contato
-from agenda import Agenda
+from Data import Data
+from Contato import Contato
+from Agenda import Agenda
 
 def criar_contato():
     nome = input("Digite o nome do contato: ")
